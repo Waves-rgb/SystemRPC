@@ -1,5 +1,6 @@
 # SystemRPC
 ___
+![Build Status](https://travis-ci.com/Waves-rgb/SystemRPC.svg?branch=main&status=created)
 Discord Rich Presence for your system.
 
 ![SystemRPC in action.](https://doggo.ninja/7MKmHp.gif)
