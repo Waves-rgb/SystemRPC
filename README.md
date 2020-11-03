@@ -20,3 +20,4 @@ Discord Rich Presence for your system.
 - [ ] Make code cleaner
 - [ ] Fix common issues and errors
 - [ ] Make use of Discord game SDK instead of RPC
+- [ ] Add some other form of resource info (such as disk or gpu ect.)
