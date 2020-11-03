@@ -13,6 +13,7 @@ Discord Rich Presence for your system.
  3. MacOS (soon)
 
 ### TODO:
+- [ ] Fix Travis-CI (very high priority)
 - [ ] Add Linux support (high priority)
 - [ ] Add MacOS support (high priority)
 - [ ] Configs to customize Rich Presence (high priority)

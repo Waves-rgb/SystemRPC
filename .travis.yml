@@ -5,9 +5,10 @@ env:
 install:
   - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
   - choco install dotnetcore-sdk
+  - cd src
   - dotnet restore
 script:
-  - cd src
+
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:Platform=x86 RPC/RPC.vcxproj
   - dotnet build --configuration Release
