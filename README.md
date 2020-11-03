@@ -9,13 +9,13 @@ Discord Rich Presence for your system.
 
 #### Operating Systems:
  1. Windows (Windows 10 Tested)
- 2. Linux (soon)
- 3. MacOS (soon)
+ 2. Linux (soon™️)
+ 3. MacOS (whenever I have a MacOS VM/Device)
 
 ### TODO:
 - [ ] Fix Travis-CI (very high priority)
 - [ ] Add Linux support (high priority)
-- [ ] Add MacOS support (high priority)
+- [ ] Add MacOS support (gotta get a VM first)
 - [ ] Configs to customize Rich Presence
 - [ ] Get rid of Console window and make it into a taskbar icon
 - [ ] Make code cleaner
