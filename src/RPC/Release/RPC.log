@@ -1,0 +1,6 @@
+﻿D:\2019studio\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(76,5): warning : Access to the path 'd:\...project\systemrpc-\rpc\release\rpc.exe' is denied.
+  Main.cpp
+  RPCHandler.cpp
+  SystemHandlerWIN.cpp
+  Compiling...
+LINK : fatal error LNK1104: cannot open file 'D:\...project\SystemRPC-\RPC\Release\RPC.exe'

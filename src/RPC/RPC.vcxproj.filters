@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\SystemHandler">
+      <UniqueIdentifier>{9e58355f-3ac3-4397-a250-15ee2fd3f42f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SystemHandler">
+      <UniqueIdentifier>{ad14ce81-f5b9-44fd-887a-9d9102192661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RPCHandler">
+      <UniqueIdentifier>{953d7cdc-0f2a-4f75-a4c3-096b567f0c6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RPCHandler">
+      <UniqueIdentifier>{a9ab55d1-3ede-401b-bb15-39c0ec2d547b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemHandler\SystemHandlerWIN.cpp">
+      <Filter>Source Files\SystemHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="RPCHandler\RPCHandler.cpp">
+      <Filter>Source Files\RPCHandler</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemHandler\SystemHandler.h">
+      <Filter>Header Files\SystemHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="RPCHandler\RPCHandler.h">
+      <Filter>Header Files\RPCHandler</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

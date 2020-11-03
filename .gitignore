@@ -33,3 +33,5 @@
 # Build directories
 */Debug
 */Release
+
+.vs/
