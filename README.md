@@ -1,7 +1,7 @@
 # SystemRPC
 ___
 
-[![Build Status](https://travis-ci.com/Waves-rgb/SystemRPC.svg?branch=main&status=created)](https://travis-ci.com/Waves-rgb/SystemRPC)
+[![Build Status](https://travis-ci.com/Waves-rgb/SystemRPC.svg?branch=main)](https://travis-ci.com/Waves-rgb/SystemRPC)
 
 Discord Rich Presence for your system.
 
