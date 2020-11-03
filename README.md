@@ -16,7 +16,8 @@ Discord Rich Presence for your system.
 - [ ] Fix Travis-CI (very high priority)
 - [ ] Add Linux support (high priority)
 - [ ] Add MacOS support (high priority)
-- [ ] Configs to customize Rich Presence (high priority)
+- [ ] Configs to customize Rich Presence
+- [ ] Get rid of Console window and make it into a taskbar icon
 - [ ] Make code cleaner
 - [ ] Fix common issues and errors
 - [ ] Make use of Discord game SDK instead of RPC
