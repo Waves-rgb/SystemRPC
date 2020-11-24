@@ -58,25 +58,30 @@ BOOL CALLBACK winenum(HWND hwnd, LPARAM lParam) {
 
 int loop()
 {
-    cout << "Systemhandler Initialized\n";
+	cout << "Systemhandler Initialized\n";
 	while (true) {
         vector<wstring> titles;
-        char tit[256];
+		char tit[256];
         HWND active = GetForegroundWindow();
         GetWindowText(active, tit, sizeof(tit));
         EnumWindows(winenum, reinterpret_cast<LPARAM>(&titles));
+		
         char buffer[420];
         char buff2 [420];
         MEMORYSTATUSEX memInfo;
+		
         memInfo.dwLength = sizeof(MEMORYSTATUSEX);
         GlobalMemoryStatusEx(&memInfo);
         DWORDLONG virtualMemUsed = memInfo.ullTotalPhys - memInfo.ullAvailPhys;
         virtualMemUsed = virtualMemUsed / (1024 * 1024 * 1024);
+		
         DWORDLONG totram = memInfo.ullTotalPhys;
         totram = totram / (1024 * 1024 * 1024);
+		
         sprintf(buffer, "%d Windows open | Active - %s", titles.size(), tit);
         sprintf(buff2, "%i/%igb RAM | %i%% CPU", (int)virtualMemUsed, (int)totram + 1, (int)getcurcpu());
         rpc->setRPC(buffer, buff2, "win", "Windows 10");
+		
         Sleep(333);
 	}
 	return 0;
