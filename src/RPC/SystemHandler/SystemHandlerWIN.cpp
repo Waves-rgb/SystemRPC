@@ -15,7 +15,6 @@
 
 using namespace std;
 
-int loop();
 double getcurcpu();
 long gbRAM;
 LPSTR activestr;
@@ -23,38 +22,6 @@ LPSTR err;
 
 static PDH_HQUERY cpuQuery;
 static PDH_HCOUNTER cpuTotal;
-
-double getcurcpu() {
-    PDH_FMT_COUNTERVALUE counterVal;
-    PdhCollectQueryData(cpuQuery);
-    PdhGetFormattedCounterValue(cpuTotal, PDH_FMT_DOUBLE, NULL, &counterVal);
-    return counterVal.doubleValue;
-}
-
-void SystemHandler::WINDOWS::init() {
-    PdhOpenQuery(NULL, NULL, &cpuQuery);
-    PdhAddEnglishCounter(cpuQuery, "\\Processor(_Total)\\% Processor Time", NULL, &cpuTotal);
-    PdhCollectQueryData(cpuQuery);
-	HANDLE THREAD = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)loop, NULL, NULL, NULL);
-	if (!THREAD)
-		cout << "Failed to create thread.";
-}
-BOOL CALLBACK winenum(HWND hwnd, LPARAM lParam) {
-    const DWORD TITLE_SIZE = 1024;
-    WCHAR windowTitle[TITLE_SIZE];
-    GetWindowTextW(hwnd, windowTitle, TITLE_SIZE);
-
-    int length = ::GetWindowTextLength(hwnd);
-    wstring title(&windowTitle[0]);
-    if (!IsWindowVisible(hwnd) || !IsWindow(hwnd) || !IsWindowEnabled(hwnd) || !IsWindowUnicode(hwnd)|| length == 0 || title == L"Start" || title == L"Program Manager" || title == L"View Available Networks (Tooltip)") {
-        return TRUE;
-    }
-    std::vector<std::wstring>& titles =
-        *reinterpret_cast<std::vector<std::wstring>*>(lParam);
-    titles.push_back(title);
-
-    return TRUE;
-}
 
 int loop()
 {
@@ -85,4 +52,43 @@ int loop()
         Sleep(333);
 	}
 	return 0;
+}
+
+
+double getcurcpu() {
+    PDH_FMT_COUNTERVALUE counterVal;
+    PdhCollectQueryData(cpuQuery);
+    PdhGetFormattedCounterValue(cpuTotal, PDH_FMT_DOUBLE, NULL, &counterVal);
+	
+    return counterVal.doubleValue;
+}
+
+void SystemHandler::WINDOWS::init() {
+    PdhOpenQuery(NULL, NULL, &cpuQuery);
+    PdhAddEnglishCounter(cpuQuery, "\\Processor(_Total)\\% Processor Time", NULL, &cpuTotal);
+    PdhCollectQueryData(cpuQuery);
+	
+	HANDLE THREAD = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)loop, NULL, NULL, NULL);
+	
+	if (!THREAD)
+		cout << "Failed to create thread.";
+}
+
+BOOL CALLBACK winenum(HWND hwnd, LPARAM lParam) {
+    const DWORD TITLE_SIZE = 1024;
+    WCHAR windowTitle[TITLE_SIZE];
+    GetWindowTextW(hwnd, windowTitle, TITLE_SIZE);
+
+    int length = ::GetWindowTextLength(hwnd);
+    wstring title(&windowTitle[0]);
+	
+    if (!IsWindowVisible(hwnd) || !IsWindow(hwnd) || !IsWindowEnabled(hwnd) || !IsWindowUnicode(hwnd)|| length == 0 || title == L"Start" || title == L"Program Manager" || title == L"View Available Networks (Tooltip)")
+        return TRUE;
+		
+    std::vector<std::wstring>& titles =
+        *reinterpret_cast<std::vector<std::wstring>*>(lParam);
+	
+    titles.push_back(title);
+
+    return TRUE;
 }
