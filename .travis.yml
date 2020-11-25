@@ -6,7 +6,7 @@ install:
   - cd src
   - choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64"
   - choco install windows-sdk-10-version-2004-all
-  - devenv RPC.sln /upgrade
+  - devenv RPC.sln /Upgrade
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - MSBuild.exe -p:Configuration=Release -p:useenv=true -p:Platform=x86 RPC/RPC.vcxproj
