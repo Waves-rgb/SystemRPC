@@ -2,7 +2,7 @@
 ___
 
 [![Build Status](https://travis-ci.com/Waves-rgb/SystemRPC.svg?branch=main)](https://travis-ci.com/Waves-rgb/SystemRPC)
-![File Count](https://img.shields.io/github/directory-file-count/Waves-rgb/SystemRPC)
+![Line Count](https://img.shields.io/tokei/lines/github/waves-rgb/systemrpc)
 
 Discord Rich Presence for your system.
 
