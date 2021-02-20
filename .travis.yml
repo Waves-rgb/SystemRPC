@@ -9,4 +9,4 @@ install:
   - devenv RPC.sln /Upgrade
 script:
   - export PATH=$MSBUILD_PATH:$PATH
-  - MSBuild.exe -p:Configuration=Release -p:useenv=true -p:Platform=x86 RPC/RPC.vcxproj
+  - MSBuild.exe -p:Configuration=Debug -p:useenv=true -p:Platform=x86 RPC/RPC.vcxproj
