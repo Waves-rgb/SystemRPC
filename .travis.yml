@@ -8,4 +8,4 @@ install:
 script:
   - export PATH=$MSBUILD_PATH:$PATH
   - cd src
-  - MSBuild.exe -p:Configuration=Debug -p:useenv=true -p:Platform=x86 RPC/RPC.vcxproj
+  - MSBuild.exe -p:Configuration=Debug -p:useenv=true -p:Platform=x86 RPC/RPC.vcxproj /p:PlatformToolset=v140
